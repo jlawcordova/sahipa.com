@@ -1,8 +1,8 @@
 # sahipa.com
 
 One-page portfolio site for Jollie Sahipa — Mortgage Support Specialist.
-Built with Next.js (App Router), Tailwind CSS v4, and Framer Motion, ready to
-deploy on Vercel.
+Built with Next.js (App Router), Tailwind CSS v4, Framer Motion, and Vercel
+Analytics, ready to deploy on Vercel.
 
 ## Getting started
 
@@ -37,6 +37,10 @@ For local development, copy `.env.example` to `.env.local` and fill it in.
    `CONTACT_TO_EMAIL`) under **Settings → Environment Variables**.
 3. Verify the sending domain in Resend so mail lands reliably.
 4. Point the `sahipa.com` domain at the project.
+5. Turn on **Analytics** in the project's Analytics tab. The
+   `@vercel/analytics` component is already mounted in
+   `src/app/layout.tsx`; it only collects data once analytics is enabled
+   on a Vercel deployment. Locally the script 404s, which is harmless.
 
 ## Editing content
 
