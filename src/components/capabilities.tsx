@@ -20,12 +20,6 @@ const icons: Record<Capability["icon"], LucideIcon> = {
   calendar: CalendarDays,
 };
 
-const tones: Record<Capability["tone"], string> = {
-  deep: "bg-card-deep",
-  red: "bg-card-red",
-  teal: "bg-card-teal",
-};
-
 const spans: Record<Capability["span"], string> = {
   third: "lg:col-span-2",
   half: "lg:col-span-3",
@@ -79,11 +73,9 @@ export function Capabilities() {
                 variants={fadeUp}
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.35, ease: easeOutExpo }}
-                className={`flex flex-col rounded-2xl border border-white/5 p-7 shadow-lg shadow-black/20 sm:p-8 ${tones[capability.tone]} ${spans[capability.span]}`}
+                className={`flex flex-col rounded-2xl border border-white/5 bg-card p-7 shadow-lg shadow-black/20 sm:p-8 ${spans[capability.span]}`}
               >
-                <span className="mb-7 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-tile text-maroon-deep">
-                  <Icon className="h-5 w-5" aria-hidden />
-                </span>
+                <Icon className="mb-7 h-7 w-7 text-tile" strokeWidth={1.5} aria-hidden />
                 <h3 className="font-display text-xl leading-snug font-bold sm:text-2xl">
                   {capability.title}
                 </h3>

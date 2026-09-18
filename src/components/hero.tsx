@@ -91,7 +91,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        <div className="relative min-h-[440px] overflow-hidden bg-panel sm:min-h-[560px] lg:min-h-full">
+        <div className="relative hidden overflow-hidden bg-panel lg:block lg:min-h-full">
           <motion.div
             className="absolute inset-0"
             style={reduceMotion ? undefined : { y: portraitY, scale: portraitScale }}
@@ -103,15 +103,18 @@ export function Hero() {
               src="/hero.webp"
               alt={`${site.name}, ${site.role}`}
               fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover object-[50%_32%] lg:object-[50%_46%]"
+              /* The panel is hidden below lg. Lazy loading keeps phones from
+                 downloading a portrait they never see; `sizes` keeps the
+                 desktop variant right. */
+              loading="lazy"
+              sizes="(max-width: 1024px) 1px, 40vw"
+              className="object-cover object-[50%_46%]"
             />
           </motion.div>
 
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_70%_at_50%_10%,rgba(139,25,25,0.35),transparent_70%)]" />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-panel to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-maroon/80 to-transparent lg:w-32" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-maroon/80 to-transparent" />
           <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-panel/70 to-transparent" />
         </div>
       </div>
