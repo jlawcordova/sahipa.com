@@ -61,10 +61,19 @@ export function Hero() {
 
             <motion.ul
               variants={stagger(0.06, 0.15)}
-              className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-cream/85"
+              className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3 text-sm text-cream/85"
             >
-              {site.disciplines.map((discipline) => (
-                <motion.li key={discipline} variants={fadeUp}>
+              {site.disciplines.map((discipline, index) => (
+                <motion.li
+                  key={discipline}
+                  variants={fadeUp}
+                  className="flex items-center gap-x-4"
+                >
+                  {index > 0 && (
+                    <span aria-hidden className="text-cream/40">
+                      &middot;
+                    </span>
+                  )}
                   {discipline}
                 </motion.li>
               ))}
