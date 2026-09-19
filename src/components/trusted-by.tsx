@@ -22,26 +22,16 @@ export function TrustedBy() {
           Trusted by
         </motion.p>
 
-        <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8 sm:gap-x-12">
+        <ul className="flex flex-wrap items-center justify-center gap-x-12 gap-y-10 sm:gap-x-20">
           {trustedBy.map((client) => (
-            <motion.li
-              key={client.name}
-              variants={fadeUp}
-              whileHover={{ y: -3 }}
-              className="flex flex-col items-center text-center"
-            >
-              <span className="flex h-20 w-40 items-center justify-center rounded-2xl bg-cream/95 px-5 py-3 shadow-sm sm:h-24 sm:w-48">
-                <Image
-                  src={client.logo}
-                  alt={client.name}
-                  width={320}
-                  height={320}
-                  className="h-full w-full object-contain"
-                />
-              </span>
-              <span className="mt-2 block text-[0.65rem] tracking-[0.2em] text-cream/60 uppercase">
-                {client.detail}
-              </span>
+            <motion.li key={client.name} variants={fadeUp} whileHover={{ y: -3 }}>
+              <Image
+                src={client.logo}
+                alt={client.name}
+                width={320}
+                height={320}
+                className="h-16 w-auto object-contain opacity-90 transition-opacity hover:opacity-100 sm:h-20"
+              />
             </motion.li>
           ))}
         </ul>
