@@ -10,11 +10,23 @@ export const site = {
   disciplines: ["Admin", "Business", "Finance", "Support"],
 } as const;
 
-/** Wordmarks for the "Trusted by" band. Swap these for real logo files any time. */
+/** Logos for the "Trusted by" band. */
 export const trustedBy = [
-  { name: "Haptech", detail: "Medical & Diagnostic Company" },
-  { name: "Multi-Purpose Cooperative", detail: "Financial Records" },
-  { name: "Key Mortgages", detail: "New Zealand" },
+  {
+    name: "Haptech",
+    detail: "Medical & Diagnostic Company",
+    logo: "/logos/haptech.png",
+  },
+  {
+    name: "Magsige Multipurpose Cooperative",
+    detail: "Financial Records",
+    logo: "/logos/magsige-coop.png",
+  },
+  {
+    name: "Key Mortgages",
+    detail: "New Zealand",
+    logo: "/logos/key-mortgages.png",
+  },
 ] as const;
 
 export type Capability = {
